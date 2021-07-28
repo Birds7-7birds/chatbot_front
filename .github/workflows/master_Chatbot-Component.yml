@@ -21,17 +21,11 @@ jobs:
       with:
         node-version: '14.x'
 
-#     - name: npm install, build, and test
-#       run: |
-#         npm install
-#         npm run build --if-present
-#         npm run test --if-present
-
     - name: npm install, build, and test
       run: |
         npm install
-        npm run build --prod
-      working-directory: .
+        npm run build --if-present
+        npm run test --if-present
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v2
@@ -52,17 +46,11 @@ jobs:
       with:
         name: node-app
 
-#     - name: 'Deploy to Azure Web App'
-#       id: deploy-to-webapp
-#       uses: azure/webapps-deploy@v2
-#       with:
-#         app-name: 'Chatbot-Component'
-#         slot-name: 'production'
-#         publish-profile: ${{ secrets.AzureAppService_PublishProfile_650c2fba78fe47b6af6413d7dcd9197a }}
-#         package: .
     - name: 'Deploy to Azure Web App'
+      id: deploy-to-webapp
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'Chatbot-Component'
-        publish-profile: $
-        package: ./dist/chatbot
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_fd67fd604b2949a78f348409e04cbbac }}
+        package: .
