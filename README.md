@@ -2,9 +2,9 @@
 
 This is a [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1 project that uses the [Nebular](https://akveo.github.io/nebular) version 7.0.0 library.
 
-This is a chatbot component that can be added for angular apps. This is thr front end of the chatbot. The processing done by a [chatbot backend project](https://github.com/Birds7-7birds/chatbot-back) which is hosted at this domain https://chatbotback.us-east-2.elasticbeanstalk.com/
+This is a chatbot component that can be added for angular apps. This is thr front end of the chatbot. The processing done by a [chatbot backend project](https://github.com/Birds7-7birds/chatbot-back) 
 
-This project is hosted on Microsoft Azure at the domain https://chatbot-front-component.azurewebsites.net
+Make sure [chatbot.component.ts](https://github.com/Birds7-7birds/chatbot-front/blob/master/src/app/chatbot/chatbot.component.ts#L53C1-L53C1) hardcoded to backend or ${{Backend_URL}} is properly defined
 
 ## Development server
 

@@ -50,7 +50,7 @@ export class ChatbotComponent {
     var latLon: string 
 
     var obj: string
-    const api =  `https://chatbotback.us-east-2.elasticbeanstalk.com/${event.message}`
+    const api =  `${{BACKEND_URL}}` # you can hadcode the backend url here
     navigator.geolocation.getCurrentPosition((value) => {
       var crd = value.coords;
       latLon = `${crd.latitude}, ${crd.longitude}`
